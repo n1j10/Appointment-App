@@ -38,7 +38,7 @@ function DoctorList({ doctorList, heading = "Popular Doctors" }) {
                   {doctor?.name}
                 </CardTitle>
               </CardHeader>
-              <CardContent className='space-y-2 px-4 pb-0 text-sm text-slate-700 sm:px-5'>
+              <CardContent className='space-y-2 px-4 pb-0 text-sm text-00 sm:px-5'>
                 <p>
                   <span className='font-semibold text-blue-600'>Experience:</span>{' '}
                   {doctor?.year_of_experience} years

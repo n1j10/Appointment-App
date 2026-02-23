@@ -2,7 +2,7 @@ import React from 'react'
 import Image from 'next/image'
 import { Button } from '@/components/ui/button'
 import CancelAppointment from './CancelAppointment'
-import Api from '@/app/_utils/Api'
+import Api, { DOCTOR_FALLBACK_IMAGE, getMediaUrl } from '@/app/_utils/Api'
 import { toast } from 'sonner'
 
 function MyBookingList({ bookingList, past, updateAppointment }) {
@@ -22,7 +22,7 @@ function MyBookingList({ bookingList, past, updateAppointment }) {
     <div>
       {bookingList.map((item, index) => (
         <div key={index} className='flex gap-2 items-center'>
-          <Image src={item?.doctor?.image?.[0]?.url ? `http://localhost:1337${item.doctor.image[0].url}` : '/doctor.png'}
+          <Image src={getMediaUrl(item?.doctor?.image) ?? DOCTOR_FALLBACK_IMAGE}
             width={150}
             height={120}
             alt='image'

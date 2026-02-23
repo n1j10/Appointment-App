@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import Api from '@/app/_utils/Api'
+import Api, { DOCTOR_FALLBACK_IMAGE, getMediaUrl } from '@/app/_utils/Api'
 import Link from 'next/link'
 import Image from 'next/image'
 function DoctorSuggestions() {
@@ -30,7 +30,7 @@ function DoctorSuggestions() {
           >
             <div className="flex items-center gap-4 rounded-2xl border border-slate-200 bg-white p-3 shadow-sm transition-all duration-200 hover:-translate-y-[2px] hover:shadow-md">
               <Image
-                src={doctor?.image?.[0]?.url ? `http://localhost:1337${doctor.image[0].url}` : '/doctor.png'}
+                src={getMediaUrl(doctor?.image) ?? DOCTOR_FALLBACK_IMAGE}
                 width={72}
                 height={72}
                 className="h-16 w-16 rounded-full object-cover"

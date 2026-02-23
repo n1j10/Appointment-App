@@ -1,5 +1,6 @@
 import { Button } from '@/components/ui/button'
 import React from 'react'
+import Image from 'next/image'
 
 function Hero() {
   return (
@@ -25,10 +26,12 @@ function Hero() {
 
   
         <div>
-          <img
+          <Image
             src="/assets/imag/hero.png"
             className="rounded"
-            alt=""
+            alt="Healthcare hero"
+            width={1200}
+            height={800}
           />
         </div>
       </div>

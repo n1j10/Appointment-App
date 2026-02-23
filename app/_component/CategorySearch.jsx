@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from 'react'
 import { Input } from "@/components/ui/input"
 import { Button } from '@/components/ui/button'
-import Api from '../_utils/Api'
+import Api, { getMediaUrl } from '../_utils/Api'
 import Image from 'next/image'
 import Link from 'next/link'
 function CategorySearch() {
@@ -32,7 +32,7 @@ function CategorySearch() {
 
                 {categoryList.map((cat, index) => (
                     <Link href={`/search/${cat.name}`} key={index} className='flex flex-col text-center items-center p-5 bg-blue-100 m-2 rounded-lg hover:scale-110 transition-all ease-in-out cursor-pointer'>
-                        <Image src={`http://localhost:1337${cat?.icon[0]?.url}`}
+                        <Image src={getMediaUrl(cat?.icon) ?? '/file.svg'}
                             width={70}
                             height={70}
                             alt={cat.name}

@@ -3,6 +3,7 @@ import Image from 'next/image'
 import { GraduationCap, MapPin } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import BookAppointment from '../BookAppointment'
+import { DOCTOR_FALLBACK_IMAGE, getMediaUrl } from '@/app/_utils/Api'
 function DoctorDetails({ doctor }) {
 
   return (
@@ -11,7 +12,7 @@ function DoctorDetails({ doctor }) {
 
         {/* doctor image*/}
         <div>
-          <Image src={doctor?.image?.[0]?.url ? `http://localhost:1337${doctor.image[0].url}` : '/doctor.png'}
+          <Image src={getMediaUrl(doctor?.image) ?? DOCTOR_FALLBACK_IMAGE}
             width={600}
             height={600}
             alt='image'

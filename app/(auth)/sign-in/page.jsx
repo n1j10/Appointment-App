@@ -54,7 +54,7 @@ const SignIn = () => {
                         <Button disabled={!(email.length > 0 && email.length < 20 && password.length > 0 && password.length < 20)}
                             type="submit">Sign In</Button>
 
-                        <p>Don't have an account? <Link className='text-blue-500 font-bold' href="/create-account">Create Account</Link></p>
+                        <p>Don&apos;t have an account? <Link className='text-blue-500 font-bold' href="/create-account">Create Account</Link></p>
                     </form>
                 </div>
             </div>

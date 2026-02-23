@@ -2,6 +2,7 @@ import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
+import { DOCTOR_FALLBACK_IMAGE, getMediaUrl } from '../_utils/Api'
 import {
   Card,
   CardContent,
@@ -23,7 +24,7 @@ function DoctorList({ doctorList, heading = "Popular Doctors" }) {
           <Link href={`/details/${doctor?.documentId}`} key={doctor?.documentId ?? index} className='block h-full'>
             <Card className='h-full overflow-hidden border-blue-100 p-0 transition-all duration-200 hover:-translate-y-1 hover:shadow-lg'>
               <Image
-                src={doctor?.image?.[0]?.url ? `http://localhost:1337${doctor?.image?.[0]?.url}` : 'https://cdn-icons-png.flaticon.com/512/3138/3138275.png'}
+                src={getMediaUrl(doctor?.image) ?? DOCTOR_FALLBACK_IMAGE}
                 width={600}
                 height={320}
                 className='h-52 w-full object-cover sm:h-60'
@@ -38,7 +39,7 @@ function DoctorList({ doctorList, heading = "Popular Doctors" }) {
                   {doctor?.name}
                 </CardTitle>
               </CardHeader>
-              <CardContent className='space-y-2 px-4 pb-0 text-sm text-00 sm:px-5'>
+              <CardContent className='space-y-2 px-4 pb-0 text-sm text-slate-700 sm:px-5'>
                 <p>
                   <span className='font-semibold text-blue-600'>Experience:</span>{' '}
                   {doctor?.year_of_experience} years

@@ -1,7 +1,7 @@
 "use client"
 import React, { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
-import Api from '@/app/_utils/Api'
+import Api, { getMediaUrl } from '@/app/_utils/Api'
 import Image from 'next/image'
 import {
   Command,
@@ -45,7 +45,7 @@ function CategoryList() {
               >
                 <div className='p-2 flex gap-2 w-full items-center'>
                   <Image
-                    src={`http://localhost:1337${cat?.icon[0]?.url}`}
+                    src={getMediaUrl(cat?.icon) ?? '/file.svg'}
                     width={30}
                     height={30}
                     alt={cat?.name}

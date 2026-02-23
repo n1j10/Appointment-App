@@ -55,12 +55,6 @@ function Header() {
       path: "/"
     },
 
-    {
-      id: 2,
-      name: "Explore",
-      path: "/explore"
-    },
-
   ]
 
   return (

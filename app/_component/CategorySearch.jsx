@@ -21,12 +21,8 @@ function CategorySearch() {
     }
     return (
         <div className='mb-10 items-center flex flex-col'>
-            <h2 className='font-bold text-4xl mb-7 '><span className='text-blue-500'>Search</span>    Categories</h2>
+            <h2 className='font-bold text-4xl mb-7 '><span className='text-blue-500'>Categories</span>   </h2>
 
-            <div className='flex w-full max-w-sm items-center'>
-                <Input type="email" placeholder="Email" />
-                <Button type="submit">Subscribe</Button>
-            </div>
 
             <div className='grid  md:grid-cols-3 sm:grid-cols-1 mt-8'>
 

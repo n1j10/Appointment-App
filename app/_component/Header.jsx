@@ -78,18 +78,7 @@ function Header() {
           ))}
         </ul>
       </div>
-
-
-
-
-
-
-
-
-
       {user ?
-
-
         <Popover>
           <PopoverTrigger >
 

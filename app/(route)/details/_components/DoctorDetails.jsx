@@ -21,14 +21,6 @@ function DoctorDetails({ doctor }) {
 
         </div>
 
-
-
-
-
-
-
-
-        
         {/* doctor info*/}
         <div className=' md:px-10 col-span-2 flex flex-col gap-4 items-baseline'>
           <h2 className='font-bold text-2xl mt-7'>{doctor?.name}

@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const DEFAULT_API_BASE_URL = "http://localhost:1337/api";
+const DEFAULT_API_BASE_URL = "https://doctor-appointmeant-strapi-production.up.railway.app/api";
 
 const normalizeApiBaseUrl = (value) => {
   if (typeof value !== "string") return DEFAULT_API_BASE_URL;
